@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Varita de Saúco",
+    "description": "La varita más poderosa jamás creada.",
+    "category": "Artefactos mágicos",
+    "house_affinity": "Todos",
+    "price": 500.0
+  },
+  {
+    "name": "Capa de Invisibilidad",
+    "description": "Otorga invisibilidad total a quien la porta.",
+    "category": "Artefactos mágicos",
+    "house_affinity": "Gryffindor",
+    "price": 350.0
+  },
+  {
+    "name": "Escoba Nimbus 2000",
+    "description": "Una de las escobas más rápidas y populares.",
+    "category": "Transporte mágico",
+    "house_affinity": "Gryffindor",
+    "price": 200.0
+  },
+  {
+    "name": "Giratiempos",
+    "description": "Permite retroceder en el tiempo por breves periodos de tiempo.",
+    "category": "Artefactos mágicos",
+    "house_affinity": "Ravenclaw",
+    "price": 450.0
+  },
+  {
+    "name": "Mapa del Merodeador",
+    "description": "Revela todos los pasillos y personas dentro de Hogwarts.",
+    "category": "Artefactos mágicos",
+    "house_affinity": "Todos",
+    "price": 250.0
+  },
+  {
+    "name": "Sombrero seleccionador",
+    "description": "Decide la casa de cada nuevo estudiante en Hogwarts.",
+    "category": "Artefactos mágicos",
+    "house_affinity": "Todos",
+    "price": 350.0
+  },
+  {
+    "name": "Snitch Dorada",
+    "description": "La pelota mas importante del Quidditch, captura que define el juego.",
+    "category": "Artefacto mágico",
+    "house_affinity": "Todos",
+    "price": 150.0
+  },
+  {
+    "name": "Bolso de Hogwarts",
+    "description": "Bolso con los colores de Gryffindor.",
+    "category": "Accesorio",
+    "house_affinity": "Gryffindor",
+    "price": 100.0
+  },
+  {
+    "name": "Diadema de Rowena Ravenclaw",
+    "description": "Un objeto legendario que otorga sabiduria a quien la porta.",
+    "category": "Reliquias de Hogwarts",
+    "house_affinity": "Ravenclaw",
+    "price": 250.0
+  }
+]

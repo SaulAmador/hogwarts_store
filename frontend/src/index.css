@@ -1,0 +1,763 @@
+@font-face {
+  font-family: "HarryP";
+  src: url("/fonts/HarryP.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #0f0f1a;
+  scroll-behavior: smooth;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* loading state para imagemes */
+
+img {
+  background: linear-gradient(90deg, #1a1a2e 0%, #2a2a3e 50%, #1a1a2e 100%);
+  background-size: 200% auto;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0%;
+  }
+
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+img[src] {
+  animation: none;
+  background: none;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(15, 15, 26, 0.85);
+  border-bottom: 2px solid #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-menu a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(15, 15, 26, 0.8);
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.music-btn-float:hover {
+  transform: scale(1.1);
+  background: rgba(255, 204, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.8));
+  z-index: -1;
+}
+
+.hero-wrapper {
+  height: 200vh;
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-sticky.compact {
+  height: 70px;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 15, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.landing-title.compact {
+  font-size: 2rem;
+  color: #ffcc00;
+}
+
+.landing-title {
+  font-family: "HarryP", serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: #ffcc00;
+  text-shadow: 0 0 10px #000, 0 0 20px #ffcc00;
+  letter-spacing: 2px;
+  animation: glow 3s ease-in-out infinite alternate;
+  margin: 0;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #000, 0 0 20px #ffcc00;
+  }
+
+  to {
+    text-shadow: 0 0 20px #000, 0 0 40px #ffd700;
+  }
+}
+
+.landing-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.landing-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+}
+
+/* ===== HORIZONTAL SECTION ===== */
+/* 1. La "Ventana" (Sección que se queda fija un rato) */
+.horizontal-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #0f0f1a;
+  z-index: 10;
+}
+
+/* 2. El tren (tira de contenido) */
+.horizontal-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  height: 100vh;
+  align-items: center;
+}
+
+/* 3. Cada tarjeta (item) */
+.horizontal-item {
+  flex-shrink: 0;
+  width: 100vw;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tarjeta de introduccion */
+.intro-item {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+}
+
+.section-title {
+  font-family: "HarryP", serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #ffcc00;
+  text-shadow: 0 0 15px #000, 0 0 20px #ffcc00;
+  margin-bottom: 1rem;
+}
+
+.section-text {
+  max-width: 600px;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #ddd;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Tarjetas de hechizos */
+.spell-card {
+  text-align: center;
+  max-width: 400px;
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spell-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
+}
+
+.spell-card:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.spell-card img {
+  width: 100%;
+  height: 220px;
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 204, 0, 0.2);
+}
+
+.spell-card h3,
+.feature-card h3 {
+  font-family: "HarryP", serif;
+  font-size: 1.5rem;
+  color: #ffcc00;
+  margin-bottom: 0.5rem;
+}
+
+.spell-card p,
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+/* ===== SECCIONES VERTICALES ===== */
+.vertical-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f1a;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.vertical-section.alternate {
+  background: #1a1a2e;
+}
+
+.vertical-title {
+  font-family: "HarryP", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #ffcc00;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #000;
+}
+
+.vertical-text {
+  max-width: 800px;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.8;
+  margin: 1rem 0;
+  color: #ddd;
+}
+
+.vertical-image {
+  max-width: 90%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+  border: 3px solid rgba(255, 204, 0, 0.2);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  min-height: 100vh;
+  background: linear-gradient(108deg, hwb(240 30% 22%) 0%, hsl(240, 25%, 48%) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  width: min(600px, 90vw);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 204, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.15);
+}
+
+.feature-card h3 {
+  font-family: "HarryP", serif;
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 1rem;
+}
+
+
+/* Animacion con GSAP ScrollTrigger */
+@keyframes reveal-card {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .spell-card img {
+    height: 300px;
+  }
+}
+
+.footer {
+  background: rgba(15, 15, 26, 0.9);
+  border-top: 2px solid #ffcc00;
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  text-align: center;
+  color: #ffcc00;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.8;
+}
+
+/* ===== Paginas de productos ===== */
+.page {
+  padding: 6rem 2rem 3rem;
+  color: #fff;
+  background: #0f0f1a;
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-family: "HarryP", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #ffcc00;
+  text-shadow: 0 0 10px #000, 0 0 20px #ffcc00;
+}
+
+.page-subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.cart {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+/* ===== Tarjeta (suave y uniforme) ===== */
+.product-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 204, 0, 0.45);
+  box-shadow: 0 8px 24px rgba(255, 204, 0, 0.12);
+}
+
+.product-media {
+  aspect-ratio: 4/3;
+  background: #111827;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-title {
+  font-family: "HarryP", serif;
+  font-size: 1.5rem;
+  color: #ffcc00;
+  margin-bottom: 0.25rem;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  line-height: 1.5;
+  min-height: 2.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+.product-btn {
+  background: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);
+}
+
+.product-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 204, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+  }
+
+  .product-desc {
+    font-size: 0.8rem;
+  }
+
+  .product-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== Carrito ===== */
+
+.cart-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.cart-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-remove {
+  background: transparent;
+  border: 1px solid #ffcc00;
+  color: #ffcc00;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.checkout-btn {
+  background: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.navbar-menu a.active {
+  color: #ffcc00;
+}
+
+/* ===== Perfil ===== */
+.page.profile {
+  padding: 2rem 1rem;
+  color: #eae6ff;
+  background: radial-gradient(1200px 600px at 20% -10%,
+      rgba(255, 204, 0, 0.08),
+      transparent 60%),
+    #0b0b12;
+}
+
+.profile-header {
+  margin-bottom: 1rem;
+  ;
+}
+
+.profile-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.profile-subtitle {
+  opacity: 0.8;
+}
+
+/* Tarjeta */
+.profile-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.35));
+}
+
+.profile-info .label {
+  color: #ffcc00;
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Nivel de magia */
+.profile-level {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.level-bar {
+  position: relative;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffcc00, #ffd84d);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+  transition: width 300ms ease;
+}
+
+.level-value {
+  font-weight: 700;
+}
+
+/* Rasgos */
+.profile-traits {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.trait {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+}
