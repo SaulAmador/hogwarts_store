@@ -1,4 +1,4 @@
-web:
+services:
   - type: web
     name: hogwarts-store-backend
     env: python
