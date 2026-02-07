@@ -19,7 +19,7 @@ services:
 
 
 staticSites:
-  - name: hogwarts_store-frontend
+  - name: hogwarts-store-frontend
     buildCommand: cd frontend && npm install && npm run build
     publishPath: frontend/dist
     envVars:
