@@ -21,7 +21,7 @@ services:
     name: hogwarts_store-frontend
     env: static
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/dist
+    staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
         value: https://hogwarts-store.onrender.com
