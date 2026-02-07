@@ -17,11 +17,11 @@ services:
           name: hogwarts-store-db
           property: connectionString
 
-  - type: static
-    name: hogwarts_store-frontend
-    env: static
+
+staticSites:
+  - name: hogwarts_store-frontend
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
+    publishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
         value: https://hogwarts-store.onrender.com
