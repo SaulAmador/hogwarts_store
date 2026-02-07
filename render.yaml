@@ -17,9 +17,9 @@ services:
           name: hogwarts-store-db
           property: connectionString
 
-  - type: web
-    name: hogwarts-store-frontend
-    env: static
+
+staticSites:
+  - name: hogwarts-store-frontend
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
