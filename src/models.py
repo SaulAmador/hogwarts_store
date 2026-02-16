@@ -12,7 +12,7 @@ class User(db.Model):
     is_active = db.Column(db.Boolean(), unique=False, nullable=False, default=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     house = db.Column(db.String(50), nullable=True)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
 
     # Métodos para manejar la contraseña
