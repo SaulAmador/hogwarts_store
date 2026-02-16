@@ -28,7 +28,8 @@ def register():
         user = User(
             email=data["email"],
             username=data["username"],
-            house=data.get("house", "sin_casa"), # Usamos un valor por defecto si falta
+            house=data.get("house", "sin_casa"),
+            patronus=data.get("patronus", "sin patronus"),
             password_hash=hashed
         )
         db.session.add(user)
@@ -69,3 +70,12 @@ def refresh():
     identity = get_jwt_identity()
     new_token = create_access_token(identity=identity, expires_delta=timedelta(hours=1))
     return jsonify(access_token=new_token), 200
+
+@auth_bp.route("/me", methods=["GET"])
+@jwt_required() 
+def get_profile():
+    user_id = get_jwt_identity()
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+    return jsonify(user.serialize()), 200
