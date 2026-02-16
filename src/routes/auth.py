@@ -22,20 +22,27 @@ def register():
     
     try:
         hashed = generate_password_hash(data["password"])
+        # Log para depuración
+        print(f"Intentando registrar usuario: {data.get('username')} con casa: {data.get('house')}")
+        
         user = User(
             email=data["email"],
             username=data["username"],
-            house=data["house"],
+            house=data.get("house", "sin_casa"), # Usamos un valor por defecto si falta
             password_hash=hashed
         )
         db.session.add(user)
         db.session.commit()
+        print(f"Usuario {user.username} registrado exitosamente")
         
         access_token = create_access_token(identity=str(user.id), expires_delta=timedelta(hours=1))
         return jsonify({"message": "Registro exitoso", "access_token": access_token}), 201
     except Exception as e:
         db.session.rollback()
-        return jsonify({"error": str(e)}), 500
+        print(f"ERROR CRITICO EN REGISTRO: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": f"Error interno en el servidor: {str(e)}"}), 500
 
 # Define la ruta de login que acepta solo peticiones POST
 @auth_bp.route("/login", methods=["POST"])
