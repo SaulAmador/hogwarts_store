@@ -43,4 +43,18 @@ export const getCurrentUser = () => {
 
 export const logout = () => {
     removeToken();
-}; 
+};
+
+export const getMyProfile = async () => {
+    try {
+        const token = getToken();
+        const response = await axios.get(`${API_URL}/auth/me`, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data?.message || "Error al obtener el perfil";
+    }
+};

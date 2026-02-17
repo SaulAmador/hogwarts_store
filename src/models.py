@@ -12,6 +12,7 @@ class User(db.Model):
     is_active = db.Column(db.Boolean(), unique=False, nullable=False, default=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     house = db.Column(db.String(50), nullable=True)
+    patronus = db.Column(db.String(50), nullable=True)
     password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
 
@@ -32,9 +33,10 @@ class User(db.Model):
             "email": self.email,
             "username": self.username,
             "house": self.house,
+            "patronus": self.patronus,
             "is_active": self.is_active,
             "created_at": self.created_at.isoformat(),
-            # do not serialize the password, its a security breach
+            # no serializar la contraseña, es una brecha de seguridad
         }
 
 # ------------------- Modelo de Producto -------------------

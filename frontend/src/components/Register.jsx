@@ -100,6 +100,21 @@ export default function Register() {
                     <option value="ravenclaw">Ravenclaw</option>
                 </select>
 
+                <input
+                    type="text"
+                    name="patronus"
+                    placeholder="Patronus"
+                    value={formData.patronus}
+                    onChange={handleChange}
+                    required
+                    style={{
+                        display: "block",
+                        width: "100%",
+                        marginBottom: "1rem",
+                        padding: "0.5rem"
+                    }}
+                />
+
                 <button
                     type="submit"
                     style={{

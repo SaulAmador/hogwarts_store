@@ -6,7 +6,7 @@ app = create_app()
 with app.app_context():
     try:
         print("Agregando patronus a los usuarios...")
-        db.session.excute(text("ALTER TABLE user ADD COLUMN patronus VARCHAR(50);"))
+        db.session.execute(text('ALTER TABLE "user" ADD COLUMN patronus VARCHAR(50);'))
         db.session.commit()
         print("Columna patronus agregada con exito")        
     except Exception as e:
