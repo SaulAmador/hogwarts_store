@@ -1,3 +1,49 @@
+@keyframes magicalAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: inset 0 4px 20px rgba(255, 215, 0, 0.4),
+      0 0 30px rgba(255, 215, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes shimmerMove {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
 @font-face {
   font-family: "HarryP";
   src: url("/fonts/HarryP.ttf") format("truetype");
@@ -505,7 +551,15 @@ img[src] {
   border: 1px solid rgba(139, 115, 85, 0.3);
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0;
+}
+
+.product-card.visible {
+  opacity: 1;
 }
 
 .glass-card {
@@ -519,26 +573,52 @@ img[src] {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* ===== Tarjeta de producto (estilo pergamino) ===== */
 .product-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(139, 119, 101, 0.5) 20%,
-      rgba(139, 119, 101, 0.5) 80%,
-      transparent 100%);
-  z-index: 1;
+  top: -6px;
+  left: 5%;
+  right: 5%;
+  height: 12px;
+  background: linear-gradient(180deg,
+      #8b7355 0%,
+      #6d5a45 15%,
+      #a08060 30%,
+      #c9b48a 50%,
+      #dcc89c 60%,
+      #c9b48a 70%,
+      #a08060 85%,
+      #8b7355 100%);
+  border-radius: 50%;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.product-card:hover::before {
+  background: linear-gradient(180deg,
+      #a08060 0%,
+      #8b7355 20%,
+      #c9b48a 40%,
+      #dcc89c 50%,
+      #c9b48a 60%,
+      #8b7355 80%,
+      #a08060 100%);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(212, 196, 168, 0.5);
 }
 
 .product-card:hover {
-  transform: translateY(-8px) rotate(-0.5deg);
+  transform: translateY(-12px) rotate(-0.5deg);
   box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.4),
-    0 4px 8px rgba(139, 115, 85, 0.3);
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 8px 16px rgba(139, 115, 85, 0.3);
 }
 
 .product-media {
@@ -561,9 +641,10 @@ img[src] {
 
 .product-title {
   font-family: "HarryP", serif;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: #3d2314;
   margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .product-desc {
