@@ -12,58 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Landing() {
   const navigate = useNavigate();
   const [musicPlaying, setMusicPlaying] = useState(false);
-  const [characters, setCharacters] = useState([]);
-
-  // Fetch de personajes de la HP-API (Requisito 4Geeks)
-  useEffect(() => {
-    fetch("https://hp-api.onrender.com/api/characters")
-      .then(res => res.json())
-      .then(data => {
-        // Tomamos solo los primeros 8 personajes con imagen
-        const withImages = data.filter(char => char.image).slice(0, 8);
-        setCharacters(withImages);
-      })
-      .catch(err => console.error("Error cargando personajes:", err));
-  }, []);
 
   // Animacion del hero y features
   useEffect(() => {
     const setupAnimations = () => {
-      // Navbar aparece al hacer scroll
-      gsap.to(".navbar", {
-        opacity: 1,
-        pointerEvents: "all",
-        scrollTrigger: {
-          trigger: ".hero-sticky",
-          start: "bottom top",
-          toggleActions: "play none none reverse",
-        }
-      });
-
-      // Morphing del hero 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero-sticky",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-        }
-      })
-        .to(".hero-sticky", {
-          height: "70px",
-          backgroundColor: "rgba(15, 15, 26, 0.95)",
-          backdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(255, 204, 0, 0.3)",
-          ease: "none"
-        })
-        .to(".landing-title", { fontSize: "2rem", y: 0, ease: "none" }, 0)
-        .to(".hero-subtitle, .landing-btn, .hero-video, .hero-overlay", {
-          opacity: 0,
-          pointerEvents: "none",
-          ease: "none"
-        }, 0);
-
       // SECCIONES HORIZONTALES
       document.querySelectorAll(".horizontal-section").forEach((section) => {
         const container = section.querySelector(".horizontal-container");
@@ -83,19 +35,6 @@ export default function Landing() {
             },
           });
         }
-      });
-
-      // Animación de Cards 
-      gsap.from(".feature-card", {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: ".features",
-          start: "top 85%",
-          end: "bottom 40%",
-          scrub: true,
-        },
       });
     };
 
@@ -308,32 +247,6 @@ export default function Landing() {
               Se dice que con solo tres gotas es suficiente para lograr este efecto.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Sección horizontal de personajes (API Externa) */}
-      <section id="personajes" className="horizontal-section personajes">
-        <div className="horizontal-container">
-          <div className="horizontal-item intro-item">
-            <div>
-              <h2 className="section-title">
-                Personajes
-                <img src="/icons/escudo.png" alt="Escudo" className="icon" />
-              </h2>
-              <p className="section-text">
-                Conoce a las leyendas que habitan los pasillos de Hogwarts (Datos reales de HP-API)
-              </p>
-            </div>
-          </div>
-
-          {characters.map((char, index) => (
-            <div key={index} className="horizontal-item char-card">
-              <img src={char.image} alt={char.name} />
-              <h3>{char.name}</h3>
-              <p>Casa: {char.house || "Desconocida"}</p>
-              <p>Actor: {char.actor}</p>
-            </div>
-          ))}
         </div>
       </section>
 
