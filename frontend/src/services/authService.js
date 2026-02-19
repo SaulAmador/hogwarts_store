@@ -25,7 +25,7 @@ export const login = async (email, password) => {
         }
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al iniciar sesión";
+        throw error.response?.data?.error || "Error al iniciar sesión";
     }
 };
 
@@ -34,7 +34,7 @@ export const register = async (userData) => {
         const response = await axios.post(`${API_URL}/auth/register`, userData);
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al registrar usuario";
+        throw error.response?.data?.error || "Error al registrar usuario";
     }
 };
 
@@ -56,7 +56,7 @@ export const getMyProfile = async () => {
         });
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al obtener el perfil";
+        throw error.response?.data?.error || "Error al obtener el perfil";
     }
 };
 
@@ -78,7 +78,7 @@ export const forgotPassword = async (email) => {
         const response = await axios.post(`${API_URL}/auth/forgot-password`, { email });
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al solicitar recuperación";
+        throw error.response?.data?.error || "Error al solicitar recuperación";
     }
 };
 
@@ -87,6 +87,6 @@ export const resetPassword = async (token, newPassword) => {
         const response = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al resetear contraseña";
+        throw error.response?.data?.error || "Error al resetear contraseña";
     }
 };

@@ -7,7 +7,8 @@ export default function Register() {
         email: "",
         username: "",
         password: "",
-        house: ""
+        house: "",
+        patronus: ""
     });
     const [error, setError] = useState(null);
     const navigate = useNavigate();
