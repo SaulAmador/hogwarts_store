@@ -12,6 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Landing() {
   const navigate = useNavigate();
   const [musicPlaying, setMusicPlaying] = useState(false);
+  const [characters, setCharacters] = useState([]);
+
+  // Fetch de personajes de la HP-API (Requisito 4Geeks)
+  useEffect(() => {
+    fetch("https://hp-api.onrender.com/api/characters")
+      .then(res => res.json())
+      .then(data => {
+        // Tomamos solo los primeros 8 personajes con imagen
+        const withImages = data.filter(char => char.image).slice(0, 8);
+        setCharacters(withImages);
+      })
+      .catch(err => console.error("Error cargando personajes:", err));
+  }, []);
 
   // Animacion del hero y features
   useEffect(() => {
@@ -295,6 +308,32 @@ export default function Landing() {
               Se dice que con solo tres gotas es suficiente para lograr este efecto.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Sección horizontal de personajes (API Externa) */}
+      <section id="personajes" className="horizontal-section personajes">
+        <div className="horizontal-container">
+          <div className="horizontal-item intro-item">
+            <div>
+              <h2 className="section-title">
+                Personajes
+                <img src="/icons/escudo.png" alt="Escudo" className="icon" />
+              </h2>
+              <p className="section-text">
+                Conoce a las leyendas que habitan los pasillos de Hogwarts (Datos reales de HP-API)
+              </p>
+            </div>
+          </div>
+
+          {characters.map((char, index) => (
+            <div key={index} className="horizontal-item char-card">
+              <img src={char.image} alt={char.name} />
+              <h3>{char.name}</h3>
+              <p>Casa: {char.house || "Desconocida"}</p>
+              <p>Actor: {char.actor}</p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -80,6 +80,7 @@ def update_user(user_id):
     user.email = data.get("email", user.email) 
     user.username = data.get("username", user.username) 
     user.house = data.get("house", user.house) 
+    user.patronus = data.get("patronus", user.patronus) 
 
     try:
         db.session.commit() 

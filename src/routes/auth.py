@@ -79,3 +79,38 @@ def get_profile():
     if not user:
         return jsonify({"error": "Usuario no encontrado"}), 404
     return jsonify(user.serialize()), 200
+
+# Endpoint para recuperación de contraseña (Requisito 4Geeks)
+@auth_bp.route("/forgot-password", methods=["POST"])
+def forgot_password():
+    data = request.get_json()
+    email = data.get("email")
+    if not email:
+        return jsonify({"error": "Email requerido"}), 400
+    
+    user = User.query.filter_by(email=email).first()
+    if not user:
+        return jsonify({"error": "Si el usuario existe, recibirá un correo"}), 200
+    
+    # En un sistema real, enviaríamos un email con un token
+    # Aquí simulamos el éxito
+    print(f"DEBUG: Solicitud de recovery para {email}")
+    return jsonify({"message": "Se ha enviado un correo de recuperación (Simulado)"}), 200
+
+@auth_bp.route("/reset-password", methods=["POST"])
+def reset_password():
+    data = request.get_json()
+    token = data.get("token") # En este caso el token es simulado o el user_id
+    new_password = data.get("newPassword")
+    
+    if not token or not new_password:
+        return jsonify({"error": "Token y nueva contraseña requeridos"}), 400
+    
+    # Simulación: Buscamos al primer usuario (esto debería usar un token real)
+    user = User.query.get(token) 
+    if not user:
+        return jsonify({"error": "Token inválido"}), 400
+        
+    user.set_password(new_password)
+    db.session.commit()
+    return jsonify({"message": "Contraseña actualizada con éxito"}), 200

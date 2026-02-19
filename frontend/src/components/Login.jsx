@@ -38,6 +38,19 @@ export default function Login() {
     }
   };
 
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError("Por favor, ingresa tu email");
+      return;
+    }
+    try {
+      await import("../services/authService").then(m => m.forgotPassword(email));
+      alert("Se ha enviado un correo de recuperación (Simulado)");
+    } catch (err) {
+      setError(err.toString());
+    }
+  };
+
   return (
     <div style={{ maxWidth: "400px", margin: "auto", padding: "2rem" }}>
       <h2 className="login-title">Acceso a Hogwarts Store ✨</h2>
@@ -81,6 +94,22 @@ export default function Login() {
         >
           Alohomora
         </button>
+        <div style={{ textAlign: 'right', marginTop: '0.5rem' }}>
+          <button
+            type="button"
+            onClick={handleForgotPassword}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#d4c4a8',
+              cursor: 'pointer',
+              fontSize: '0.8rem',
+              textDecoration: 'underline'
+            }}
+          >
+            ¿Olvidaste tu hechizo secreto?
+          </button>
+        </div>
       </form>
       <p style={{ marginTop: "1rem", textAlign: "center" }}>
         ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>

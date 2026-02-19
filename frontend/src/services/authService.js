@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
+
 const setToken = (token) => {
     localStorage.setItem("access_token", token);
 };
@@ -24,7 +25,7 @@ export const login = async (email, password) => {
         }
         return response.data;
     } catch (error) {
-        throw error.response?.data?.message || "Error al iniciar sesión";
+        throw error.response?.data?.message || "Error al iniciar sesión";
     }
 };
 
@@ -56,5 +57,36 @@ export const getMyProfile = async () => {
         return response.data;
     } catch (error) {
         throw error.response?.data?.message || "Error al obtener el perfil";
+    }
+};
+
+export const updateProfile = async (userData) => {
+    try {
+        const token = getToken();
+        const me = await getMyProfile();
+        const response = await axios.put(`${API_URL}/users/${me.id}`, userData, {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data?.error || "Error al actualizar perfil";
+    }
+};
+
+export const forgotPassword = async (email) => {
+    try {
+        const response = await axios.post(`${API_URL}/auth/forgot-password`, { email });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data?.message || "Error al solicitar recuperación";
+    }
+};
+
+export const resetPassword = async (token, newPassword) => {
+    try {
+        const response = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
+        return response.data;
+    } catch (error) {
+        throw error.response?.data?.message || "Error al resetear contraseña";
     }
 };
