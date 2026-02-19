@@ -1,12 +1,17 @@
 import { useCart } from "../context/CartContext";
 
+const getPicsumImage = (id, width = 400, height = 300) => 
+    `https://picsum.photos/seed/${id}/${width}/${height}`;
+
 export default function ProductCard({ id, name, price, description, image }) {
     const { addItem } = useCart();
+    
+    const productImage = image || getPicsumImage(id);
 
     return (
         <article className="product-card pergamino-card">
             <div className="product-media">
-                <img src={image} alt={name} />
+                <img src={productImage} alt={name} />
             </div>
             <div className="product-info pergamino-text">
                 <h3 className="product-title pergamino-title">{name}</h3>
@@ -16,7 +21,7 @@ export default function ProductCard({ id, name, price, description, image }) {
                     <button
                         className="product-btn pergamino-btn"
                         onClick={() => {
-                            addItem({ id, name, price, image });
+                            addItem({ id, name, price, image: productImage });
                             alert(`¡${name} añadido al baúl! 🪄`);
                         }}
                     >
