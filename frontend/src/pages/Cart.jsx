@@ -38,7 +38,7 @@ export default function Cart() {
                                             value={i.qty}
                                             onChange={(e) => setQty(i.id, Number(e.target.value))}
                                         />
-                                        <button onClick={() => removeItem(i.id)}>
+                                        <button className="cart-remove" onClick={() => removeItem(i.id)}>
                                             Eliminar/Evanesco
                                         </button>
                                     </div>
@@ -53,7 +53,7 @@ export default function Cart() {
                             <span>Subtotal:</span>
                             <strong>${total.toFixed(2)}</strong>
                         </div>
-                        <button onClick={handleCheckout}>
+                        <button className="checkout-btn" onClick={handleCheckout}>
                             Adquirir Ahora 🪄
                         </button>
                     </section>
