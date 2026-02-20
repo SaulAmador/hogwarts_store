@@ -1,129 +1,91 @@
-📘 Hogwarts Store API
+# ⚡ Hogwarts Store: Proyecto Final Full Stack 🦉
 
-Esta documentación describe los endpoints disponibles en el backend de Hogwarts Store.
+¡Bienvenido a **Hogwarts Store**! Este proyecto es la culminación de mi formación como Desarrollador Full Stack en **4Geeks Academy**. Es una plataforma de comercio electrónico mágica diseñada para que los estudiantes de Hogwarts puedan adquirir sus materiales esenciales: desde túnicas y calderos hasta pociones y hechizos legendarios.
 
-🔐 Autenticación
+---
 
-Registro de usuario
+## 🚀 Vista Previa
+- **Demo en vivo:** [Hogwarts Store en Render](https://hogwarts-store.onrender.com)
+- **Frontend:** React + Vite + GSAP
+- **Backend:** Python + Flask + PostgreSQL
 
-POST /register
+---
 
-Body:
+## ✨ Características Principales
 
-{
-  "email": "hermione@hogwarts.com",
-  "username": "hermione",
-  "password": "leviosa123",
-  "house": "Gryffindor"
-}
+### 1. **Identidad Mágica (Autenticación)**
+- Sistema de registro e inicio de sesión seguro usando **JWT (JSON Web Tokens)**.
+- Perfil dinámico de "Mago/Bruja" que muestra tu casa de Hogwarts y tu **Patronus**.
+- **CRUD de Usuario**: Los usuarios pueden actualizar sus datos (Casa, Nombre, Patronus) directamente en su perfil.
 
-Respuesta:
+### 2. **Integración con el Mundo Mágico (API Externa)**
+- Conexión en tiempo real con la **HP-API**.
+- Sección dedicada en la Landing Page que muestra personajes destacados con datos reales del universo de Harry Potter.
 
-{
-  "message": "Registro exitoso",
-  "access_token": "<JWT_TOKEN>"
-}
+### 3. **Comercio Mágico (Carrito & Pedidos)**
+- Catálogo dinámico filtrado por categorías (Hechizos, Pociones, Objetos).
+- Carrito de compras funcional (Agregar/Quitar productos).
+- Historial de pedidos persistente vinculado a la cuenta del usuario.
 
-Login de usuario
+### 4. **Experiencia de Usuario (UI/UX)**
+- Interfaz inmersiva con **estética de pergamino y cristal (Glassmorphism)**.
+- Animaciones fluidas desarrolladas con **GSAP (GreenSock Animation Platform)** para una sensación "mágica" al navegar.
+- Diseño responsivo adaptado para pergaminos (escritorio) y espejos (móviles).
 
-POST /login
+---
 
-Body:
+## 🛠️ Tecnologías Utilizadas
 
-{
-  "email": "hermione@hogwarts.com",
-  "password": "leviosa123"
-}
+### **Frontend**
+- **React.js**: Biblioteca principal para la interfaz.
+- **Vite**: Herramienta de construcción ultra rápida.
+- **GSAP**: Animaciones y efectos de scroll.
+- **React Router**: Gestión de navegación SPA.
+- **Axios**: Comunicación con la API REST.
 
-Respuesta:
+### **Backend**
+- **Python & Flask**: Framework de servidor.
+- **SQLAlchemy (ORM)**: Gestión de base de datos.
+- **Flask-Migrate**: Control de versiones de la base de datos.
+- **Flask-JWT-Extended**: Seguridad y autenticación.
+- **PostgreSQL**: Base de datos relacional (desplegada en Render).
 
-{
-  "message": "Login exitoso",
-  "access_token": "<JWT_TOKEN>"
-}
+---
 
-👤 Usuarios
+## 💻 Instalación Local
 
-POST /users → Crear usuario
+Si deseas correr el Caldero de forma local:
 
-GET /users/<id> → Obtener usuario por ID
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/tu-usuario/hogwarts_store.git
+   cd hogwarts_store
+   ```
 
-🛒 Productos
+2. **Backend Setup:**
+   ```bash
+   pip install -r requirements.txt
+   flask db upgrade
+   python src/seed_data.py  # Para cargar productos iniciales
+   flask run
+   ```
 
-GET /products → Todos los productos
+3. **Frontend Setup:**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
 
-GET /products/spells → Solo hechizos
+---
 
-GET /products/potions → Solo pociones
+## 🤝 Autor
+Este proyecto fue desarrollado con pasión por **Saúl Amador**, como parte del programa de Full Stack Web Development de **4Geeks Academy**.
 
-GET /products/objects → Solo objetos
+---
 
-POST /products → Crear producto
+## ⚖️ Licencia
+Este proyecto es exclusivamente educativo y para fines de portafolio. Todo el contenido está inspirado en el universo de Harry Potter (Warner Bros).
 
-PUT /products/<id> → Actualizar producto
-
-DELETE /products/<id> → Eliminar producto
-
-🛍️ Carrito
-
-POST /cart → Agregar producto al carrito
-
-Headers: Authorization: Bearer <JWT_TOKEN>
-
-Body:
-
-{
-  "user_id": 1,
-  "product_id": 5,
-  "quantity": 2
-}
-
-GET /cart/<user_id> → Ver carrito de un usuario
-
-Headers: Authorization: Bearer <JWT_TOKEN>
-
-DELETE /cart/<item_id> → Eliminar producto del carrito
-
-Headers: Authorization: Bearer <JWT_TOKEN>
-
-📦 Órdenes
-
-POST /orders → Crear orden desde el carrito
-
-Headers: Authorization: Bearer <JWT_TOKEN>
-
-Body:
-
-{
-  "user_id": 1
-}
-
-GET /orders/<user_id> → Ver órdenes de un usuario
-
-Headers: Authorization: Bearer <JWT_TOKEN>
-
-⚠️ Notas
-
-Todos los endpoints protegidos requieren el header:
-
-Authorization: Bearer <JWT_TOKEN>
-
-Los tokens expiran en 1 hora.
-
-Para pruebas, usar Postman o similar.
-
-🎯 Flujo completo de prueba
-
-POST /register → Crear usuario y obtener token.
-
-POST /login → Obtener token de acceso.
-
-GET /products → Listar productos.
-
-POST /cart → Agregar producto al carrito.
-
-GET /cart/<user_id> → Ver carrito.
-
-POST /orders → Crear orden.
-
-GET /orders/<user_id> → Ver órdenes del usuario.
+---
+*Mischief Managed.* ✨
