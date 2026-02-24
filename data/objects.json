@@ -61,5 +61,12 @@
     "category": "Reliquias de Hogwarts",
     "house_affinity": "Ravenclaw",
     "price": 250.0
+  },
+  {
+    "name": "Piedra de la Resurrección",
+    "description": "Una de las tres Reliquias de la Muerte que permite comunicarse con los fallecidos.",
+    "category": "Reliquias de Hogwarts",
+    "house_affinity": "Todos",
+    "price": 600.0
   }
 ]

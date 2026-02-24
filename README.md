@@ -84,8 +84,4 @@ Este proyecto fue desarrollado con pasión por **Saúl Amador**, como parte del 
 
 ---
 
-## ⚖️ Licencia
-Este proyecto es exclusivamente educativo y para fines de portafolio. Todo el contenido está inspirado en el universo de Harry Potter (Warner Bros).
-
----
 *Travesura realizada.* ✨

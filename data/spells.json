@@ -1,0 +1,167 @@
+[
+    {
+        "category": "Hechizo oscuro",
+        "description": "Also known as The Killing Curse, the most evil spell in the Wizarding World; one of three Unforgivable Curses; Harry Potter is the only known witch or wizard to survive it.",
+        "house_affinity": "Slytherin",
+        "id": 1,
+        "image_url": null,
+        "is_active": true,
+        "name": "Avada Kedavra",
+        "price": 100.0,
+        "type": "spell"
+    },
+    {
+        "category": "Encantamiento básico",
+        "description": "The Patronus Charm is a powerful projection of hope and happiness that drives away Dementors; a corpeal Patronus takes the the respective animal form of the caster, while a non-corpeal appears as a wisp of light.",
+        "house_affinity": "Ravenclaw",
+        "id": 2,
+        "image_url": null,
+        "is_active": true,
+        "name": "Expecto patronum",
+        "price": 73.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "Forces an opponent to drop whatever's in their possession.",
+        "house_affinity": "Todos",
+        "id": 3,
+        "image_url": null,
+        "is_active": true,
+        "name": "Expelliarmus",
+        "price": 79.0,
+        "type": "spell"
+    },
+    {
+        "category": "Hechizo oscuro",
+        "description": "One of three Unforgivable Curses, it causes unbearable pain in the target.",
+        "house_affinity": "Slytherin",
+        "id": 4,
+        "image_url": null,
+        "is_active": true,
+        "name": "Crucio",
+        "price": 82.0,
+        "type": "spell"
+    },
+    {
+        "category": "Hechizo oscuro",
+        "description": "One of the three Unforgivable Curses, it places the target under the complete control of the caster.",
+        "house_affinity": "Slytherin",
+        "id": 5,
+        "image_url": null,
+        "is_active": true,
+        "name": "Imperio",
+        "price": 89.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "Illuminates the caster's wand.",
+        "house_affinity": "Todos",
+        "id": 6,
+        "image_url": null,
+        "is_active": true,
+        "name": "Lumos",
+        "price": 34.0,
+        "type": "spell"
+    },
+    {
+        "category": "Encantamiento básico",
+        "description": "Causes an object to levitate; but remember what Hermione said: \"It's Wing-gar-dium Levi-o-sa, make the 'gar' nice and long.'\"",
+        "house_affinity": "Ravenclaw",
+        "id": 7,
+        "image_url": null,
+        "is_active": true,
+        "name": "Wingardium Leviosa",
+        "price": 73.0,
+        "type": "spell"
+    },
+    {
+        "category": "Curacion y protección",
+        "description": "Casts an invisible shield around the caster, protecting against spells and objects (except for The Killing Curse).",
+        "house_affinity": "Hufflepuff",
+        "id": 8,
+        "image_url": null,
+        "is_active": true,
+        "name": "Protego",
+        "price": 86.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "The Stunning spell freezes objects and renders living targets unconscious.",
+        "house_affinity": "Todos",
+        "id": 9,
+        "image_url": null,
+        "is_active": true,
+        "name": "Stupefy",
+        "price": 39.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "Conjures flames.",
+        "house_affinity": "Todos",
+        "id": 10,
+        "image_url": null,
+        "is_active": true,
+        "name": "Incendio",
+        "price": 39.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "A general counter-spell that's used to reverse or counter already cast charms.",
+        "house_affinity": "Todos",
+        "id": 11,
+        "image_url": null,
+        "is_active": true,
+        "name": "Finite Incantatem",
+        "price": 76.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "Summons objects.",
+        "house_affinity": "Todos",
+        "id": 12,
+        "image_url": null,
+        "is_active": true,
+        "name": "Accio",
+        "price": 29.0,
+        "type": "spell"
+    },
+    {
+        "category": "Curacion y protección",
+        "description": "Heals broken bones.",
+        "house_affinity": "Hufflepuff",
+        "id": 13,
+        "image_url": null,
+        "is_active": true,
+        "name": "Brackium Emendo",
+        "price": 68.0,
+        "type": "spell"
+    },
+    {
+        "category": "Defensa contra las artes oscuras",
+        "description": "Used to defeat a Boggart, the charm allows the scary creature to assume a comedic form, disarming it.",
+        "house_affinity": "Gryffindor",
+        "id": 14,
+        "image_url": null,
+        "is_active": true,
+        "name": "Riddikulus",
+        "price": 51.0,
+        "type": "spell"
+    },
+    {
+        "category": "Otros",
+        "description": "Temporarily freezes or petrifies the body of the target.",
+        "house_affinity": "Todos",
+        "id": 15,
+        "image_url": null,
+        "is_active": true,
+        "name": "Petrificus Totalus",
+        "price": 67.0,
+        "type": "spell"
+    }
+]

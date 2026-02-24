@@ -7,12 +7,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 
 def fetch_spells():
-    url = f"{HP_API_BASE}/spells"
-    response = requests.get(url, timeout=20)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error al obtener hechizos: {response.status_code}")
+    spells_path = DATA_DIR / "spells.json"
+    if not spells_path.exists():
+        print(f"Archivo no encontrado: {spells_path}")
+        return []
+    try: 
+        with spells_path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error al obtener hechizos: {e}")
         return []
 
 def fetch_characters():
