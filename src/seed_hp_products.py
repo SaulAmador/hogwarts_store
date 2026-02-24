@@ -153,8 +153,14 @@ def upsert_product_from_object(object):
     return True
     
 def main():
+    print(f"Base de datos: {db.engine.url}")
+    print(f"Directorio base: {BASE_DIR}")
+    print(f"Directorio data: {DATA_DIR}")
+    print(f"Archivos en data: {list(DATA_DIR.glob('*.json')) if DATA_DIR.exists() else 'DIRECTORIO NO EXISTE'}")
+    
     # Hechizos
     spells = fetch_spells()
+    print(f"Hechizos obtenidos: {len(spells)}")
     total_spells = len(spells)
     created_spells = 0
     for spell in spells:
