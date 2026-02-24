@@ -19,7 +19,7 @@ def create_app():
     
     # Configuraciones de la base de datos 
     db_url = os.getenv("DATABASE_URL")
-    if db_url is not None:
+    if db_url is not None and db_url.strip() != "":
         app.config['SQLALCHEMY_DATABASE_URI'] = db_url.replace("postgres://", "postgresql://")
     else:
         basedir = os.path.abspath(os.path.dirname(__file__))
