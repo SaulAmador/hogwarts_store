@@ -1,11 +1,15 @@
 # Ejecuta este script dentro del contexto de tu app Flask (app_context) si usas SQLAlchemy 
 # Ej: from app import create_app; app = create_app(); with app.app_context(): main()
+import os
 import random
-import requests
 import json
+from pathlib import Path
 from src.models import db, Product
 from src.app import create_app
 from services.hp_importer import fetch_spells, fetch_potions
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
 
         
 # Genera un precio magico basado en el nombre y efecto del hechizo 
@@ -168,7 +172,8 @@ def main():
     print(f"Pociones creadas: {created_potions}/{total_potions}")
 
     # Objetos (JSON local)
-    with open("data/objects.json", "r", encoding="utf-8") as f:
+    objects_path = DATA_DIR / "objects.json"
+    with objects_path.open("r", encoding="utf-8") as f:
         objects = json.load(f)
     total_objects = len(objects)
     created_objects = 0
