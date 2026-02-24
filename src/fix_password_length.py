@@ -6,6 +6,7 @@ app = create_app()
 
 with app.app_context():
     try:
+        db.create_all()
         print("Ampliando columna password_hash a 255 caracteres...")
         # Ejecutamos SQL directo para modificar la columna
         db.session.execute(text('ALTER TABLE "user" ALTER COLUMN password_hash TYPE VARCHAR(255);'))

@@ -23,9 +23,11 @@ def create_app():
         app.config['SQLALCHEMY_DATABASE_URI'] = db_url.replace("postgres://", "postgresql://")
     else:
         basedir = os.path.abspath(os.path.dirname(__file__))
-        # Go up one level from src/ to root, then into instance/
         root_dir = os.path.dirname(basedir)
-        db_path = os.path.join(root_dir, 'instance', 'hogwarts_store.db')
+        instance_dir = os.path.join(root_dir, 'instance')
+        if not os.path.exists(instance_dir):
+            os.makedirs(instance_dir, exist_ok=True)
+        db_path = os.path.join(instance_dir, 'hogwarts_store.db')
         app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
