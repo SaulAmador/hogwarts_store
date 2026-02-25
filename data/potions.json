@@ -6,13 +6,13 @@
     },
     {
         "id": 2,
-        "name": "Poción de Fuego Negro",
-        "description": "Una poción que permite al usuario atravesar el fuego negro sin sufrir heridas."
+        "name": "Crecehuesos",
+        "description": "Una poción que permite al usuario regenerar sus huesos."
     },
     {
         "id": 3,
-        "name": "Fragmento de Muerte en Vida",
-        "description": "Una poción que induce a quien la toma a un estado de sueño que le hace parecer muerto."
+        "name": "Poción Envejecedora",
+        "description": "Una poción que hace que quien la toma envejezca."
     },
     {
         "id": 4,
@@ -42,35 +42,30 @@
     {
         "id": 9,
         "name": "Poción Pimentón",
-        "description": "Alivia y/o cura los síntomas del resfriado."
+        "description": "Alivia y/o cura los síntomas del resfriado común y sirve para calentar a la persona que la bebe."
     },
     {
         "id": 10,
-        "name": "Antídoto para venenos comunes",
-        "description": "Una poción que revierte los efectos de los venenos comunes. Contiene bezoar, bayas de muérdago y cuernos de unicornio."
+        "name": "Poción del Olvido",
+        "description": "Una poción que hace que quien la toma olvide sus recuerdos."
     },
     {
         "id": 11,
-        "name": "Poción Regeneradora de Sangre",
-        "description": "Una poción que repone la sangre del usuario si ha sufrido heridas y ha perdido sangre."
+        "name": "Filtro de muertos en vida",
+        "description": "Una poción que hace que quien la toma pueda ver a los muertos."
     },
     {
         "id": 12,
-        "name": "Poción Calmante",
-        "description": "Una poción que calma al usuario en caso de shock, trauma, etc."
+        "name": "Poción protectora contra las llamas",
+        "description": "Una poción que protege al usuario de las llamas."
     },
     {
         "id": 13,
-        "name": "Suero de la Verdad",
-        "description": "Hace que quien lo bebe diga la verdad."
-    },
-    {
-        "id": 14,
         "name": "Veritaserum",
         "description": "Obliga a quien lo toma a decir la verdad."
     },
     {
-        "id": 15,
+        "id": 14,
         "name": "Poción Wiggenweld",
         "description": "Cura daños menores. Despierta a una persona de un sueño inducido mágicamente."
     }

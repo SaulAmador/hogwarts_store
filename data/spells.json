@@ -1,7 +1,7 @@
 [
     {
         "category": "Hechizo oscuro",
-        "description": "Also known as The Killing Curse, the most evil spell in the Wizarding World; one of three Unforgivable Curses; Harry Potter is the only known witch or wizard to survive it.",
+        "description": "También conocida como La Maldición Asesina, el hechizo más malvado del Mundo Mágico; una de las tres Maldiciones Imperdonables; Harry Potter es el único mago o bruja conocido que sobrevivió a ella.",
         "house_affinity": "Slytherin",
         "id": 1,
         "image_url": null,
@@ -12,7 +12,7 @@
     },
     {
         "category": "Encantamiento básico",
-        "description": "The Patronus Charm is a powerful projection of hope and happiness that drives away Dementors; a corpeal Patronus takes the the respective animal form of the caster, while a non-corpeal appears as a wisp of light.",
+        "description": "El encantamiento Patronus es una poderosa proyección de esperanza y felicidad que aleja a los dementores; un Patronus corpeo toma la forma animal respectiva del lanzador, mientras que uno no corpeo aparece como un haz de luz.",
         "house_affinity": "Ravenclaw",
         "id": 2,
         "image_url": null,
@@ -23,7 +23,7 @@
     },
     {
         "category": "Otros",
-        "description": "Forces an opponent to drop whatever's in their possession.",
+        "description": "Fuerza a un oponente a soltar lo que tenga en su poder.",
         "house_affinity": "Todos",
         "id": 3,
         "image_url": null,
@@ -34,7 +34,7 @@
     },
     {
         "category": "Hechizo oscuro",
-        "description": "One of three Unforgivable Curses, it causes unbearable pain in the target.",
+        "description": "Una de las tres Maldiciones Imperdonables, inflige un dolor insoportable al objetivo.",
         "house_affinity": "Slytherin",
         "id": 4,
         "image_url": null,
@@ -45,7 +45,7 @@
     },
     {
         "category": "Hechizo oscuro",
-        "description": "One of the three Unforgivable Curses, it places the target under the complete control of the caster.",
+        "description": "Una de las tres maldiciones imperdonables, coloca al objetivo bajo el control total del lanzador.",
         "house_affinity": "Slytherin",
         "id": 5,
         "image_url": null,
@@ -56,7 +56,7 @@
     },
     {
         "category": "Otros",
-        "description": "Illuminates the caster's wand.",
+        "description": "Ilumina la varita del lanzador.",
         "house_affinity": "Todos",
         "id": 6,
         "image_url": null,
@@ -67,7 +67,7 @@
     },
     {
         "category": "Encantamiento básico",
-        "description": "Causes an object to levitate; but remember what Hermione said: \"It's Wing-gar-dium Levi-o-sa, make the 'gar' nice and long.'\"",
+        "description": "Hace que un objeto levite; pero recuerda lo que dijo Hermione: \"Es Wing-gar-dium Levi-o-sa, ¡haz que el 'gar' sea largo y suave!\"",
         "house_affinity": "Ravenclaw",
         "id": 7,
         "image_url": null,
@@ -78,7 +78,7 @@
     },
     {
         "category": "Curacion y protección",
-        "description": "Casts an invisible shield around the caster, protecting against spells and objects (except for The Killing Curse).",
+        "description": "Lanza un escudo invisible alrededor del lanzador, protegiéndolo contra hechizos y objetos (excepto La maldición asesina).",
         "house_affinity": "Hufflepuff",
         "id": 8,
         "image_url": null,
@@ -88,19 +88,19 @@
         "type": "spell"
     },
     {
-        "category": "Otros",
-        "description": "The Stunning spell freezes objects and renders living targets unconscious.",
+        "category": "Hechizo oscuro",
+        "description": "Inflige laceraciónes severas y hemorragia en el objetivo.",
         "house_affinity": "Todos",
         "id": 9,
         "image_url": null,
         "is_active": true,
-        "name": "Stupefy",
-        "price": 39.0,
+        "name": "Sectumsempra",
+        "price": 51.0,
         "type": "spell"
     },
     {
         "category": "Otros",
-        "description": "Conjures flames.",
+        "description": "Conjura llamas.",
         "house_affinity": "Todos",
         "id": 10,
         "image_url": null,
@@ -111,7 +111,7 @@
     },
     {
         "category": "Otros",
-        "description": "A general counter-spell that's used to reverse or counter already cast charms.",
+        "description": "Un contra-hechizo general que se utiliza para revertir o contrarrestar hechizos ya lanzados.",
         "house_affinity": "Todos",
         "id": 11,
         "image_url": null,
@@ -122,7 +122,7 @@
     },
     {
         "category": "Otros",
-        "description": "Summons objects.",
+        "description": "Invoca objetos.",
         "house_affinity": "Todos",
         "id": 12,
         "image_url": null,
@@ -133,7 +133,7 @@
     },
     {
         "category": "Curacion y protección",
-        "description": "Heals broken bones.",
+        "description": "Cura huesos rotos.",
         "house_affinity": "Hufflepuff",
         "id": 13,
         "image_url": null,
@@ -144,7 +144,7 @@
     },
     {
         "category": "Defensa contra las artes oscuras",
-        "description": "Used to defeat a Boggart, the charm allows the scary creature to assume a comedic form, disarming it.",
+        "description": "Se utiliza para derrotar a un Boggart, el encantamiento permite que la criatura aterradora asuma una forma cómica, desarmándola.",
         "house_affinity": "Gryffindor",
         "id": 14,
         "image_url": null,
@@ -155,7 +155,7 @@
     },
     {
         "category": "Otros",
-        "description": "Temporarily freezes or petrifies the body of the target.",
+        "description": "Congela o petrifica temporalmente el cuerpo del objetivo.",
         "house_affinity": "Todos",
         "id": 15,
         "image_url": null,

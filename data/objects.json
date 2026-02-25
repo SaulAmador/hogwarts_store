@@ -50,9 +50,9 @@
   },
   {
     "name": "Bolso de Hogwarts",
-    "description": "Bolso con los colores de Gryffindor.",
+    "description": "Bolso estilo carta de Hogwarts.",
     "category": "Accesorio",
-    "house_affinity": "Gryffindor",
+    "house_affinity": "Todos",
     "price": 100.0
   },
   {
