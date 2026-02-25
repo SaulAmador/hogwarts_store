@@ -4,7 +4,7 @@ services:
     env: python
     region: oregon
     buildCommand: pip install -r requirements.txt
-    startCommand: python -m src.fix_password_length && flask db stamp head && python -m src.seed_hp_products && gunicorn -w 4 -b 0.0.0.0:$PORT "src.app:create_app()"
+    startCommand: python -m src.seed_hp_products && gunicorn -w 4 -b 0.0.0.0:$PORT "src.app:create_app()"
     envVars:
       - key: FLASK_APP
         value: src/app:create_app()
