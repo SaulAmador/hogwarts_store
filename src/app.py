@@ -4,6 +4,9 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
+import cloudinary
+import cloudinary.uploader
+import os
 
 from src.models import db, Product, Order, OrderItem, CartItem, User
 from src.utils import APIException, generate_sitemap
@@ -12,6 +15,13 @@ from src.routes.products import products_bp
 from src.routes.cart import cart_bp
 from src.routes.orders import orders_bp
 from src.routes.auth import auth_bp
+
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET"),
+    secure=True
+)
 
 def create_app():
     app = Flask(__name__)
