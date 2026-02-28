@@ -1,72 +1,82 @@
 [
-  {
-    "name": "Varita de Saúco",
-    "description": "La varita más poderosa jamás creada.",
-    "category": "Artefactos mágicos",
-    "house_affinity": "Todos",
-    "price": 500.0
-  },
-  {
-    "name": "Capa de Invisibilidad",
-    "description": "Otorga invisibilidad total a quien la porta.",
-    "category": "Artefactos mágicos",
-    "house_affinity": "Gryffindor",
-    "price": 350.0
-  },
-  {
-    "name": "Escoba Nimbus 2000",
-    "description": "Una de las escobas más rápidas y populares.",
-    "category": "Transporte mágico",
-    "house_affinity": "Gryffindor",
-    "price": 200.0
-  },
-  {
-    "name": "Giratiempos",
-    "description": "Permite retroceder en el tiempo por breves periodos de tiempo.",
-    "category": "Artefactos mágicos",
-    "house_affinity": "Ravenclaw",
-    "price": 450.0
-  },
-  {
-    "name": "Mapa del Merodeador",
-    "description": "Revela todos los pasillos y personas dentro de Hogwarts.",
-    "category": "Artefactos mágicos",
-    "house_affinity": "Todos",
-    "price": 250.0
-  },
-  {
-    "name": "Sombrero seleccionador",
-    "description": "Decide la casa de cada nuevo estudiante en Hogwarts.",
-    "category": "Artefactos mágicos",
-    "house_affinity": "Todos",
-    "price": 350.0
-  },
-  {
-    "name": "Snitch Dorada",
-    "description": "La pelota mas importante del Quidditch, captura que define el juego.",
-    "category": "Artefacto mágico",
-    "house_affinity": "Todos",
-    "price": 150.0
-  },
-  {
-    "name": "Bolso de Hogwarts",
-    "description": "Bolso estilo carta de Hogwarts.",
-    "category": "Accesorio",
-    "house_affinity": "Todos",
-    "price": 100.0
-  },
-  {
-    "name": "Diadema de Rowena Ravenclaw",
-    "description": "Un objeto legendario que otorga sabiduria a quien la porta.",
-    "category": "Reliquias de Hogwarts",
-    "house_affinity": "Ravenclaw",
-    "price": 250.0
-  },
-  {
-    "name": "Piedra de la Resurrección",
-    "description": "Una de las tres Reliquias de la Muerte que permite comunicarse con los fallecidos.",
-    "category": "Reliquias de Hogwarts",
-    "house_affinity": "Todos",
-    "price": 600.0
-  }
+    {
+        "name": "Varita de Saúco",
+        "description": "La varita más poderosa jamás creada.",
+        "category": "Artefactos mágicos",
+        "house_affinity": "Todos",
+        "price": 500.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772305224/hogwarts_store/objetos/varita_de_sa%C3%BAco.webp"
+    },
+    {
+        "name": "Capa de Invisibilidad",
+        "description": "Otorga invisibilidad total a quien la porta.",
+        "category": "Artefactos mágicos",
+        "house_affinity": "Gryffindor",
+        "price": 350.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301178/hogwarts_store/objetos/capa_de_invisibilidad.webp"
+    },
+    {
+        "name": "Escoba Nimbus 2000",
+        "description": "Una de las escobas más rápidas y populares.",
+        "category": "Transporte mágico",
+        "house_affinity": "Gryffindor",
+        "price": 200.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772305225/hogwarts_store/objetos/escoba_nimbus_2000.jpg"
+    },
+    {
+        "name": "Giratiempos",
+        "description": "Permite retroceder en el tiempo por breves periodos de tiempo.",
+        "category": "Artefactos mágicos",
+        "house_affinity": "Ravenclaw",
+        "price": 450.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301181/hogwarts_store/objetos/giratiempos.jpg"
+    },
+    {
+        "name": "Mapa del Merodeador",
+        "description": "Revela todos los pasillos y personas dentro de Hogwarts.",
+        "category": "Artefactos mágicos",
+        "house_affinity": "Todos",
+        "price": 250.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301182/hogwarts_store/objetos/mapa_del_merodeador.webp"
+    },
+    {
+        "name": "Sombrero seleccionador",
+        "description": "Decide la casa de cada nuevo estudiante en Hogwarts.",
+        "category": "Artefactos mágicos",
+        "house_affinity": "Todos",
+        "price": 350.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301183/hogwarts_store/objetos/sombrero_seleccionador.jpg"
+    },
+    {
+        "name": "Snitch Dorada",
+        "description": "La pelota mas importante del Quidditch, captura que define el juego.",
+        "category": "Artefacto mágico",
+        "house_affinity": "Todos",
+        "price": 150.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301185/hogwarts_store/objetos/snitch_dorada.webp"
+    },
+    {
+        "name": "Bolso de Hogwarts",
+        "description": "Bolso estilo carta de Hogwarts.",
+        "category": "Accesorio",
+        "house_affinity": "Todos",
+        "price": 100.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772305233/hogwarts_store/objetos/bolso_de_hogwarts.jpg"
+    },
+    {
+        "name": "Diadema de Rowena Ravenclaw",
+        "description": "Un objeto legendario que otorga sabiduria a quien la porta.",
+        "category": "Reliquias de Hogwarts",
+        "house_affinity": "Ravenclaw",
+        "price": 250.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301187/hogwarts_store/objetos/diadema_de_rowena_ravenclaw.webp"
+    },
+    {
+        "name": "Piedra de la Resurrección",
+        "description": "Una de las tres Reliquias de la Muerte que permite comunicarse con los fallecidos.",
+        "category": "Reliquias de Hogwarts",
+        "house_affinity": "Todos",
+        "price": 600.0,
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772305235/hogwarts_store/objetos/piedra_de_la_resurrecci%C3%B3n.avif"
+    }
 ]

@@ -2,71 +2,85 @@
     {
         "id": 1,
         "name": "Amortentia",
-        "description": "La poción de amor más poderosa del mundo; no crea amor verdadero, solo una poderosa obsesión."
+        "description": "La poción de amor más poderosa del mundo; no crea amor verdadero, solo una poderosa obsesión.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301174/hogwarts_store/pociones/amortentia.jpg"
     },
     {
         "id": 2,
         "name": "Crecehuesos",
-        "description": "Una poción que permite al usuario regenerar sus huesos."
+        "description": "Una poción que permite al usuario regenerar sus huesos.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772301175/hogwarts_store/pociones/crecehuesos.jpg"
     },
     {
         "id": 3,
         "name": "Poción Envejecedora",
-        "description": "Una poción que hace que quien la toma envejezca."
+        "description": "Una poción que hace que quien la toma envejezca.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304956/hogwarts_store/pociones/poci%C3%B3n_envejecedora.jpg"
     },
     {
         "id": 4,
         "name": "Elixir de la Vida",
-        "description": "Una poción creada a partir de la Piedra Filosofal que prolonga la vida."
+        "description": "Una poción creada a partir de la Piedra Filosofal que prolonga la vida.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304677/hogwarts_store/pociones/elixir_de_la_vida.jpg"
     },
     {
         "id": 5,
-        "name": "Felix Felicis (También conocido como Suerte Líquida)",
-        "description": "Una poción mágica que garantiza el éxito en todas sus actividades."
+        "name": "Felix Felicis",
+        "description": "Una poción mágica que garantiza el éxito en todas sus actividades.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304677/hogwarts_store/pociones/felix_felicis.jpg"
     },
     {
         "id": 6,
         "name": "Poción de Invisibilidad",
-        "description": "Una poción que hace invisible a quien la toma."
+        "description": "Una poción que hace invisible a quien la toma.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304958/hogwarts_store/pociones/poci%C3%B3n_de_invisibilidad.jpg"
     },
     {
         "id": 7,
         "name": "Purificación Restaurativa de Mandrágora",
-        "description": "Una poción hecha de mandrágoras que restaura a una persona petrificada a su estado original."
+        "description": "Una poción hecha de mandrágoras que restaura a una persona petrificada a su estado original.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304678/hogwarts_store/pociones/purificaci%C3%B3n_restaurativa_de_mandr%C3%A1gora.jpg"
     },
     {
         "id": 8,
         "name": "Poción Multijugos",
-        "description": "Transforma temporalmente a quien la bebe en otra persona. Adoptará la apariencia de la persona cuyo cabello, uñas, etc., se añaden a la poción."
+        "description": "Transforma temporalmente a quien la bebe en otra persona. Adoptará la apariencia de la persona cuyo cabello, uñas, etc., se añaden a la poción.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304679/hogwarts_store/pociones/poci%C3%B3n_multijugos.jpg"
     },
     {
         "id": 9,
         "name": "Poción Pimentón",
-        "description": "Alivia y/o cura los síntomas del resfriado común y sirve para calentar a la persona que la bebe."
+        "description": "Alivia y/o cura los síntomas del resfriado común y sirve para calentar a la persona que la bebe.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304680/hogwarts_store/pociones/poci%C3%B3n_piment%C3%B3n.jpg"
     },
     {
         "id": 10,
         "name": "Poción del Olvido",
-        "description": "Una poción que hace que quien la toma olvide sus recuerdos."
+        "description": "Una poción que hace que quien la toma olvide sus recuerdos.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304682/hogwarts_store/pociones/poci%C3%B3n_del_olvido.jpg"
     },
     {
         "id": 11,
         "name": "Filtro de muertos en vida",
-        "description": "Una poción que hace que quien la toma pueda ver a los muertos."
+        "description": "Una poción que hace que quien la toma pueda ver a los muertos.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304682/hogwarts_store/pociones/filtro_de_muertos_en_vida.jpg"
     },
     {
         "id": 12,
         "name": "Poción protectora contra las llamas",
-        "description": "Una poción que protege al usuario de las llamas."
+        "description": "Una poción que protege al usuario de las llamas.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304684/hogwarts_store/pociones/poci%C3%B3n_protectora_contra_las_llamas.jpg"
     },
     {
         "id": 13,
         "name": "Veritaserum",
-        "description": "Obliga a quien lo toma a decir la verdad."
+        "description": "Obliga a quien lo toma a decir la verdad.",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304684/hogwarts_store/pociones/veritaserum.jpg"
     },
     {
         "id": 14,
-        "name": "Poción Wiggenweld",
-        "description": "Cura daños menores. Despierta a una persona de un sueño inducido mágicamente."
+        "name": "Poción Weedosoros",
+        "description": "Weedosoros es un veneno muy potente. Su nombre proviene de la expresión «weed of sorrows», que significa «hierba de los dolores».",
+        "image_url": "https://res.cloudinary.com/dzcxrne2p/image/upload/v1772304686/hogwarts_store/pociones/poci%C3%B3n_weedosoros.jpg"
     }
 ]
