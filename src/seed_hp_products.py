@@ -37,15 +37,16 @@ def price_from_spell(spell_name: str, effect: str) -> float:
 def upsert_product_from_spell(spell):
     # Inserta un hechizo como producto, evitando duplicados por nombre
     name = spell.get("name", "").strip()
-    effect = spell.get("description", "") or spell.get("effect", "")
+    image_url = spell.get("image_url")
     if not name:
         return False
 
     # Evitar duplicados por nombre
     existing = Product.query.filter_by(name=name).first()
     if existing:
+        existing.image_url = image_url
         return False
-    
+
     # Clasificacion magica
     desc_lower = effect.lower()
     if "light" in desc_lower or "levitate" in desc_lower:
@@ -76,6 +77,7 @@ def upsert_product_from_spell(spell):
         description=narrative,
         category=category,
         house_affinity=house_affinity,
+        image_url=image_url,
         type="spell"
     )
     db.session.add(product)
@@ -83,6 +85,7 @@ def upsert_product_from_spell(spell):
 
 def upsert_product_from_potion(potion):
     name = (potion.get("name") or "").strip()
+    image_url = potion.get("image_url")
     effect = (potion.get("description") or potion.get("effect") or "").strip()
     if not name:
         return False
@@ -90,6 +93,7 @@ def upsert_product_from_potion(potion):
     # Evitar duplicados por nombre
     existing = Product.query.filter_by(name=name).first()
     if existing:
+        existing.image_url = image_url
         return False
     
     # Clasificacion magica
@@ -122,6 +126,7 @@ def upsert_product_from_potion(potion):
         description=narrative,
         category=category,
         house_affinity=house_affinity,
+        image_url=image_url,
         type="potion"
     )
     db.session.add(product)
@@ -129,6 +134,7 @@ def upsert_product_from_potion(potion):
 
 def upsert_product_from_object(object):
     name = (object.get("name") or "").strip()
+    image_url = object.get("image_url")
     description = object.get("description", "")
     category = object.get("category", "Otros")
     house_affinity = object.get("house_affinity", "Todos")
@@ -139,6 +145,7 @@ def upsert_product_from_object(object):
     
     existing = Product.query.filter_by(name=name).first()
     if existing:
+        existing.image_url = image_url
         return False
     
     product = Product(
@@ -147,6 +154,7 @@ def upsert_product_from_object(object):
         description=description,
         category=category,
         house_affinity=house_affinity,
+        image_url=image_url,
         type="object"
     )
     db.session.add(product)
