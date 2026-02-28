@@ -38,6 +38,7 @@ def upsert_product_from_spell(spell):
     # Inserta un hechizo como producto, evitando duplicados por nombre
     name = spell.get("name", "").strip()
     image_url = spell.get("image_url")
+    effect = spell.get("description", "") or spell.get("effect", "")
     if not name:
         return False
 
