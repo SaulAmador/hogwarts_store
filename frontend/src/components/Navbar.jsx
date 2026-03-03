@@ -11,11 +11,11 @@ export default function Navbar({ isLanding = false }) {
         <nav className="navbar">
             {isLanding ? (
                 <a href="/" target="_blank" rel="noopener noreferrer" className="navbar-logo">
-                    Hogwards Store
+                    <img src="/icons/escudo.png" alt="Hogwarts Store" style={{ height: "40px" }} />
                 </a>
             ) : (
                 <Link to="/" className="navbar-logo">
-                    Hogwards Store
+                    <img src="/icons/escudo.png" alt="Hogwarts Store" style={{ height: "40px" }} />
                 </Link>
             )}
 
